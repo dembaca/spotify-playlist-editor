@@ -14,10 +14,10 @@ var request = require('request'); // "Request" library
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 
-var client_id = 'a05f038fe9a0479aba1d871e69b22256'; // Your client id
-var client_secret = '73979369cd4148189482bfb9c4100c2d'; // Your client secret
+var client_id = process.env.SPOTIFY_CLIENT_ID; // Your client id
+var client_secret = process.env.SPOTIFY_CLIENT_SECRET;  // Your client secret
 
-var redirect_uri = 'https://spotify-playlist-editor-dgi-dembaca.apps.dcp.dg-i.net/callback'; // Your redirect uri
+var redirect_uri =  process.env.REDIRECT_URI; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
