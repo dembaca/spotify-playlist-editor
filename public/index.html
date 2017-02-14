@@ -92,7 +92,13 @@
         <p>Hold your finger down on a track and move it up or down to change its position.</p>
         <ul id="trackList" class="list-group">
           {{#each items}}
-          <li class="list-group-item">{{this.track.name}} <span class="artist">- {{this.track.artists.0.name}}<span></li>
+          <li class="list-group-item">{{this.track.name}} 
+              <span class="artist">- {{this.track.artists.0.name}}<span>
+              <span class="duration">- {{this.track.duration_ms}}<span>
+              <div id="features-{{this.track.id}}" class="features">
+                <span class="key">Am</span> <span class="bpm"> - 108 </span><span class="energy"> - 9.433 </span>
+              </div>
+          </li>
             {{/each}}
           </ul>
           {{else}}
