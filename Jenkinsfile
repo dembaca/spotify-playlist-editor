@@ -1,21 +1,8 @@
-pipeline {
-    agent any
-
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-    }
+node {
+  stage 'build' {
+	openshiftBuild(buildConfig: 'playlist-editor', showBuildLogs: 'true')
+  }
+  stage 'deploy' {
+	openshiftDeploy(deploymentConfig: 'playlist-editor')
+  }
 }
