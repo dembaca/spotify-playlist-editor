@@ -1,8 +1,7 @@
 node {
-  stage 'build' {
+  stage 'build' 
 	openshiftBuild(buildConfig: 'playlist-editor', showBuildLogs: 'true')
-  }
-  stage 'deploy' {
+  stage 'deploy' 
 	openshiftDeploy(deploymentConfig: 'playlist-editor')
-  }
+ 
 }
