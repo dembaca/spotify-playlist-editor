@@ -1,0 +1,8 @@
+#!/bin/bash
+export client_id=
+export client_secret=
+export redirect_uri=http://localhost:8080/callback
+export PORT=8080
+
+node server.js
+

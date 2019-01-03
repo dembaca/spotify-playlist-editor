@@ -5,7 +5,7 @@ html {
 
 body{
 
-	background-color: #e67e22;
+	background-color: #001405;
 	margin:0px;
 	font-family:'open sans';
 	font-weight:200;
@@ -93,6 +93,11 @@ p{
 	float:right;
 }
 
+.track-player 
+{
+	float: right;
+}
+
 .profile-img{
 	vertical-align: middle;
 	margin-bottom: 6px;
@@ -118,21 +123,22 @@ p{
 
 }
 
-.BackToPlaylistsButton{
+.playlist-controls {
 	padding-top:15px;
 }
 
 .list-group-item {
 	position: relative;
 	display: block;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	padding-left:15px;
-	padding-right:10px;
+	padding-top: 0px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
 	font-size: 0.9em;
 
 	background-color: #FFF;
 	color:#000000;
+	border-radius: 1px;
 
 	font-weight:600;
 
@@ -143,15 +149,126 @@ p{
 	overflow: auto;
 }
 
+.track-artwork {
+	padding-left: 15px;
+	display: inline-block;
+}
+
+.album-artwork
+{
+	object-fit: cover;
+	object-position: 0 0;
+	width: 64px;
+	height: 40px;
+}
+
+.track-features
+{
+	display: inline-block;
+}
+
+.track-info
+{
+	padding-left: 15px;
+	display: inline-block;
+}
+
+.artist
+{
+	font-weight: 100;
+	font-size: 0.9em;
+	padding-right: 15px;
+}
+
+.key, .bpm {
+	font-weight: 100;
+	font-size: 0.8em;
+	width: 50px;
+}
+
+.energy {
+	float: left;
+}
+
+.energy-meter {
+	width: 50px;
+	height: 5px;
+	appearance: none;
+	
+	background: none;
+	background-color: lightgrey;
+	border-radius: 1px;
+	/* transform: rotate(-90deg); */
+}
+
+.energy-meter::-webkit-meter-bar {
+	background: none; /* Required to get rid of the default background property */
+	background-color: lightgrey;
+	border-radius: 1px;
+  }
+
+.energy-meter::-webkit-meter-optimum-value,
+.energy-meter::-webkit-meter-suboptimum-value,
+.energy-meter::-webkit-meter-even-less-good-value {
+  border-radius: 3px;
+}
+
+.energy-meter::-webkit-meter-optimum-value {
+  background: rgb(190, 103, 57);
+}
+
+.energy-meter::-webkit-meter-suboptimum-value {
+  background: rgb(243, 217, 68);
+}
+
+.energy-meter::-webkit-meter-even-less-good-value  {
+	background: rgb(157, 199, 80);
+}
+
+.energy-meter::-moz-meter-bar {
+  border-radius: 3px;
+}
+
+.energy-meter:-moz-meter-optimum::-moz-meter-bar {
+	background: rgb(190, 103, 57);
+}
+
+.energy-meter:-moz-meter-sub-optimum::-moz-meter-bar {
+	background: rgb(243, 217, 68);
+}
+
+.energy-meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+	background: rgb(157, 199, 80);
+}
+
+.track-handles {
+	float: right;
+	position: relative;
+	top: 10px;
+}
+
 .drag-handle
 {
-	float:right;
-	text-align:center;
 	width:30px;
 	height:20px;
 	color:#444444;
+	padding-left: 5px;
 }
 
+.preview-handle
+{
+	width:30px;
+	height:20px;
+	padding-left: 5px;
+}
+
+.spotify-handle
+{
+	position: relative;
+	top: 4px;
+	width: 30px;
+	padding-left: 5px;
+}
 
 .list-group-item a {
 		text-decoration: none;
@@ -208,11 +325,6 @@ background-color: #27ae60;
 	border-color: #179e50;
 }
 
-.artist
-{
-	font-weight: 100;
-	font-size: 0.9em;
-}
 .site-footer, .page-wrap:after {
   height: 50px;
 	line-height: 50px;
